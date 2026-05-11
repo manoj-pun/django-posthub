@@ -39,4 +39,32 @@ def upload_post(request,username):
     return render(request, 'posts/upload_post.html', {'form': form})
 
 
+def post_detail(request, username, post_id):
+    # Get the post by ID, ensuring it belongs to the specified username
+    post = get_object_or_404(Post, id=post_id, user__username=username)
+    
+    context = {
+        'post': post,
+        'username': username,
+    }
+    return render(request, "posts/post_detail.html", context)
+
+
+@login_required
+def post_delete(request, username, post_id):
+    post = get_object_or_404(Post, id=post_id, user__username=username)
+    
+    # Check if the logged-in user is the owner of the post
+    if request.user != post.user:
+        messages.error(request, "You don't have permission to delete this post.")
+        return redirect('post-detail', username=username, post_id=post_id)
+    
+    if request.method == 'POST':
+        post.delete()
+        messages.success(request, "Post deleted successfully!")
+        return redirect('profile', username=request.user.username)
+    
+    return render(request, 'posts/post_confirm_delete.html', {'post': post, 'username': username})
+
+
 

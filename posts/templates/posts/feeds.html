@@ -19,9 +19,9 @@
             </div>
         </div>
 
-        <div class="image">
-            <img class="image-img" src="{{ post.image.url }}" alt="">
-        </div>
+        <a class="image" href="{% url 'post-detail' username=post.user.username post_id=post.id %}">
+            <img src="{{ post.image.url }}" alt="Post image">
+        </a>
 
         <div class="description">
             <p>This is description</p>

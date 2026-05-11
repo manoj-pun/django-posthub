@@ -1,0 +1,15 @@
+{% extends "posts/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="confirm-delete-container">
+    <h2>Delete Post</h2>
+    <p>Are you sure you want to delete "{{ post.title }}"?</p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-delete">Yes, Delete</button>
+        <a href="{% url 'post-detail' username=username post_id=post.id %}" class="btn btn-update">Cancel</a>
+    </form>
+</div>
+{% endblock %}

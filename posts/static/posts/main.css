@@ -472,3 +472,78 @@ a.cancel {
 .description p {
     margin: 0;
 }
+
+
+
+
+
+.post-detail-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.post-detail-wrapper {
+    display: flex;
+    background: rgb(239, 236, 236);
+    border-radius: 12px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    min-height: 500px;
+}
+
+/* Left Side - Post Image */
+.post-detail-left {
+    flex: 1;
+    background: #f5f6f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.post-image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Right Side - User Info and Actions */
+.post-detail-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-detail-righ-image-name{
+    border-bottom: 2px solid gray;
+    padding: 30px 0 30px 20px;
+}
+
+.post-actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1; 
+    gap: 15px;
+}
+
+.btn-update{
+    background-color: #2e7d32;
+}
+
+.btn-delete{
+    background-color: red !important;
+}
+
+
+
+
+
+
+
+
+
