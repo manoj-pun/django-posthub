@@ -1,0 +1,36 @@
+{% extends "posts/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="upload-container">
+    <div class="upload-form-container">
+        <h2>Create New Post</h2>
+        
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+            {% csrf_token %}
+            
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.help_text %}
+                        <small class="help-text">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% if field.errors %}
+                        <div class="error">
+                            {{ field.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            
+            <div class="form-actions">
+                <button type="submit" class="btn">
+                    <i class="fas fa-upload"></i> Upload Post
+                </button>
+                <a href="{% url 'profile' %}" class="cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

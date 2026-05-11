@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Social Media</title>
+    <link rel="stylesheet" href="{% static 'posts/main.css' %}">
+</head>
+
+<body>
+    <header class="header-content">
+        <div>
+            {% if user.is_authenticated %}
+                <a class="logo" href="{% url 'feeds' %}">PostHub</a>
+            {% else %}
+                <a class="logo" href="{% url 'home' %}">PostHub</a>
+            {% endif %}
+        </div>
+        <div class="profile-logout">
+            {% if user.is_authenticated %}
+            <a href="{% url 'profile' user.username %}" class="btn btn-dark">Profile</a>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-dark">Logout</button>
+            </form>
+            {% else %}
+            <a href="{% url 'login' %}" class="btn btn-dark">Login</a>
+            <a href="{% url 'register' %}" class="btn btn-dark">Sign Up</a>
+            {% endif %}
+        </div>
+    </header>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    {% block content %}{% endblock content %}
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+{% extends "posts/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="home-container">
+    <div class="welcome-box">
+        <h1>Welcome</h1>
+        <p>Step into a space where thoughts connect and stories begin.</p>
+
+        <div class="btn-group">
+            <a href="{% url 'login' %}" class="btn">Login</a>
+            <a href="{% url 'register' %}" class="btn">Sign Up</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

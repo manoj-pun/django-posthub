@@ -1,0 +1,32 @@
+{% extends "posts/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="feed-container">
+    {% for post in posts %}
+    <div class="posts-content" data-post-id="{{ post.id }}">
+        <div class="user-info">
+            <div class="image-name">
+                <a href="{% url 'profile' post.user.username %}">
+                    <img src="{{ post.user.profile.image.url }}" alt="">
+                </a>
+                <a href="{% url 'profile' post.user.username %}" style="text-decoration: none; color: inherit;">
+                    <p>{{ post.user.username }}</p>
+                </a>
+            </div>
+            <div>
+                <p>{{ post.created_at|date:"F d, Y" }}</p>
+            </div>
+        </div>
+
+        <div class="image">
+            <img class="image-img" src="{{ post.image.url }}" alt="">
+        </div>
+
+        <div class="description">
+            <p>This is description</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

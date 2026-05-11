@@ -1,0 +1,16 @@
+{% extends "posts/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="logout-container">
+    <div class="logout-card">
+        <h1 class="logout-title">Logged Out</h1>
+        
+        <p class="logout-message">You have been successfully logged out.</p>
+        
+        <div class="login-link">
+            <a href="{% url 'login' %}" class="btn">Login Again</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

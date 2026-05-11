@@ -1,0 +1,46 @@
+{% extends "posts/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="profile-content">
+    <h2>Update Profile</h2>
+
+    <form method="POST" enctype="multipart/form-data" class="register-form">
+        {% csrf_token %}
+
+        <!-- User form fields -->
+        {% for field in u_form %}
+        <div class="form-group">
+            {{ field.label_tag }}
+            {{ field }}
+            {% if field.errors %}
+            <div class="error">
+                {{ field.errors }}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <!-- Profile form fields -->
+        {% for field in p_form %}
+        <div class="form-group">
+            {{ field.label_tag }}
+            {{ field }}
+            {% if field.errors %}
+            <div class="error">
+                {{ field.errors }}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="btn">
+            Save Changes
+        </button>
+
+        <div class="update-cancel-update">
+            <a href="{% url 'profile' %}" class="update-cancel">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

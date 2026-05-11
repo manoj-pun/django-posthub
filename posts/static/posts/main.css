@@ -1,0 +1,474 @@
+/* ─── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    background-color: #f5f5f5;
+    color: #111;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ─── Button ────────────────────────────────────────────────── */
+.btn,
+button.btn {
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-family: inherit;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.cancel,
+a.cancel {
+    display: inline-block;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: #c0392b;
+    color: #fff !important;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+.update-cancel{
+    background-color: #c0392b;
+    color: white !important;
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+
+/* ─── Header / Nav ──────────────────────────────────────────── */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: #111;
+}
+
+.profile-logout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-logout form {
+    margin: 0;
+}
+
+
+/* ─── Flash Messages ────────────────────────────────────────── */
+.alert {
+    padding: 12px 40px;
+    margin: 0;
+    font-size: 14px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-bottom: 1px solid #c8e6c9;
+    text-align: center;  /* Add this */
+}
+
+
+/* ─── Home ──────────────────────────────────────────────────── */
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 57px);
+    padding: 40px;
+}
+
+.welcome-box {
+    text-align: center;
+    max-width: 420px;
+}
+
+.welcome-box h1 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+}
+
+.welcome-box p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+
+/* ─── Register & Login Card ─────────────────────────────────── */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+    min-height: calc(100vh - 57px);
+}
+
+.register-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 36px 40px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.register-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    letter-spacing: -0.4px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.register-form .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.register-form > div:last-child p {
+    font-size: 13px;
+    color: #555;
+    margin-top: 4px;
+}
+
+.register-form > div:last-child a:not(.cancel) {
+    color: #111;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+
+/* ─── Form Fields (shared) ──────────────────────────────────── */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #111;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #111;
+}
+
+.help-text {
+    font-size: 12px;
+    color: #888;
+}
+
+.error {
+    font-size: 12px;
+    color: #c0392b;
+}
+
+.error ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* ─── Logout ────────────────────────────────────────────────── */
+.logout-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+    min-height: calc(100vh - 57px);
+}
+
+.logout-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 36px 40px;
+    max-width: 380px;
+    width: 100%;
+    text-align: center;
+}
+
+.logout-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.4px;
+}
+
+.logout-message {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.login-link .btn {
+    padding: 10px 24px;
+}
+
+
+/* ─── Profile ───────────────────────────────────────────────── */
+.profile-content {
+    max-width: 900px;
+    margin: 48px auto;
+    padding: 0 24px;
+}
+
+.profile-info {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgb(125, 122, 122);
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.profile-info p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.profile-info p:first-child {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.profile-info > div:last-child > div {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.user-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin-top: 20px;
+}
+
+.user-posts .post-item {
+    position: relative;
+    padding-bottom: 100%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.user-posts img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ─── Profile Update ────────────────────────────────────────── */
+.profile-content h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    letter-spacing: -0.3px;
+}
+
+.profile-content .register-form .btn {
+    width: auto;
+    padding: 10px 24px;
+}
+
+
+/* ─── Upload Post ───────────────────────────────────────────── */
+.upload-container {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+    min-height: calc(100vh - 57px);
+}
+
+.upload-form-container {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 36px 40px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.upload-form-container h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    letter-spacing: -0.3px;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+.form-actions .btn {
+    padding: 10px 24px;
+}
+
+
+/* ─── Feed ──────────────────────────────────────────────────── */
+.feed-container {
+    max-width: 600px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.posts-content {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+}
+
+.image-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.image-name img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+}
+
+.image-name p {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.user-info > div:last-child p {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+}
+
+.image {
+    width: 100%;
+    background-color: #fafafa;
+}
+
+.image-img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    display: block;
+}
+
+.description {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.description p {
+    margin: 0;
+}
