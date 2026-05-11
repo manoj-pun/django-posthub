@@ -61,6 +61,8 @@ This project was created for learning Django fundamentals including:
     GRANT ALL PRIVILEGES ON DATABASE posthub_db TO yourusername;
 
 6. **Create Environment Variables file**
+
+   Create a .env file in the root directory (same level as manage.py):
    ```bash
     # PostgreSQL Database settings
     DB_NAME=yourdatabasename
